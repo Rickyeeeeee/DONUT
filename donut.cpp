@@ -45,13 +45,15 @@ public:
                     float sinb = sin(d2);
                     float x = i - LONG / 2;
                     float z = (j - BREADTH / 2) * 2;
+                    z = 0;
+                    x = -20;
                     bool draw = false;
                     float sint;
                     float cost;
                     for (float t = 0; t < p * 2; t += 3.0)
                     {
-                        float _y = -x * sina + (t - p) * cosa * cosb + z * sinb;
                         float _x = x * cosa + (t - p) * sina;
+                        float _y = -x * sina + (t - p) * cosa * cosb + z * sinb;
                         float _z = -(t - p) * sinb + z * cosb;
                         float d = sqrt(_x * _x + _z * _z);
                         sint = (d - r1) / r2;
@@ -79,7 +81,7 @@ public:
             usleep(100);
             cout << "\x1D[2J";
             cout << "\x1B[H";
-            angle1 = (angle1 + 10) % 360;
+            angle1 = (angle1 + 0) % 360;
             angle2 = (angle2 + 0) % 360;
         }
     }
@@ -91,6 +93,6 @@ private:
 
 int main()
 {
-    donut two(90, 30, 20.0, 9.0, 0);
+    donut two(45, 180, 20.0, 9.0, 0);
     two.start();
 }
