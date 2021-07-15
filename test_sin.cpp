@@ -17,7 +17,7 @@ int main()
         int r2 = 10;
         cout << "\x1B[H";
         cout << "\x1D[2J";
-        d1 += 1;
+        d1 += 2;
         d1 = d1 % 360;
         d2 += 1;
         d2 = d2 % 360;
