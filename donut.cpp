@@ -7,6 +7,7 @@ using namespace std;
 class donut
 {
 public:
+    int a;
     int angle1;
     int angle2;
     float d1;
